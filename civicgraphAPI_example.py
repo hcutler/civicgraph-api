@@ -43,7 +43,9 @@ def get_data_connections(data_connections):
 def get_funding_connections(funding_connections):
   return funding_connections
 
-
+#Operation: Get all investment connections
+#Input: 'dict'
+#Output: 'dict'
 def get_investment_connections(investment_connections):
   return investment_connections
 
