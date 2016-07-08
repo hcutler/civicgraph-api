@@ -1,6 +1,5 @@
 import json
 import urllib
-import pprint
 
 url = "https://civicinsight.azurewebsites.net/athena"
 response = urllib.urlopen(url)
