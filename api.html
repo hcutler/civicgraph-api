@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Civic Graph API</title>
+    <base href='/'>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+
+<style type="text/css">
+     body {
+       /*  color: black;*/
+        background-color: white;
+        padding-left: 110px;
+        padding-right: 110px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+     }
+     .page-title {
+        text-align:center;
+     }
+     xmp {
+        color:red;
+     }
+     pre {
+        width: 580px;
+        margin-left: 80px;
+        margin-right: 40px;
+        color: red;
+     }
+     th, td {
+        border: 1px solid black;
+        padding: 15px;
+     }
+     table {
+        border: 1px solid black;
+        width:100%;
+     }
+/*     .description {
+        padding-left: 110px;
+        padding-right: 110px;
+
+     }*/
+
+     img {
+        width: 15%;
+        height: 15%;
+    };
+/*     .api-usage {
+         max-width: 330px;
+         margin: 0 auto;
+         background-color: white;
+         border-radius: 10%;
+         padding: 10px;
+         opacity: 0.8;
+     };*/
+</style>
+
+<body>
+    <div class="page-title">
+        <h1><b>Welcome to the Civic Graph Developer Portal!</b></h1><br>
+    </div>
+    <div class= "description">
+        <b>Civic Graph</b> is an open source data and visualization project initiated by Microsoft's Technology & Civic Innovation team.<br>
+        The purpose of Civic Graph is to provide insights into the burgeoning civic tech community -- who it consists of, what their respective focus areas are, and how they connect to one another.
+        Civic Graph takes a broad definition of civic tech and includes for-profit, non-profit, government agencies, and individuals.<br>
+        
+        We see Civic Graph as an educational tool, as a platform to crowdsource up-to-date information regarding the civic tech community, and as a basis to use the data to build out new visualizations, tools, and apps.
+        We invite you to contribute to Civic Graph by:<br>
+        <br>
+        <ul style="padding-left: 300px">
+            <li><a href="http://civicinsight.azurewebsites.net/">Adding</a> or <a href="http://civicinsight.azurewebsites.net/">editing</a> our current information</li>
+            <li>Use Civic Graph's data in other projects via our <a href="http://civicinsight.azurewebsites.net/developer#API">API</a> </li>
+            <li>Help us to improve Civic Graph by contributing to our <a href="https://github.com/microsoftny/civic-graph">source code</a> </li>
+        </ul>
+    </div>
+    <br>
+    <div class= "api-usage">
+    
+        <div style="padding-left:80px">
+            <h2><b>General Usage:</b></h2>
+            <br>
+            Use Civic Graph database to build your own project or to integrate with an existing project.<br>
+        </div>
+        <br>
+
+        <p style="padding-left:80px"><b>Python 3.0</b></p>
+
+        <code class="span8-offset2">
+        <pre>
+        import json
+        from urllib.request import urlopen
+        url = "https://civicinsight.azurewebsites.net/athena"
+        response = urlopen(url)
+        contents = response.read()
+        text = contents.decode('utf8')
+        data = json.loads(text)
+        print(json.dumps(data, indent=4))
+        </pre>
+        </code>
+<!--         <xmp>
+            import json
+            from urllib.request import urlopen
+            url = "https://civicinsight.azurewebsites.net/athena"
+            response = urlopen(url)
+            contents = response.read()
+            text = contents.decode('utf8')
+            data = json.loads(text)
+            print(json.dumps(data, indent=4))
+        </xmp> -->
+
+        <p style="padding-left:80px"><b>Python 2.7.8</b></p>
+
+        <code>
+        <pre>
+        import json
+        import urllib
+        url = "https://civicinsight.azurewebsites.net/athena"
+        response = urllib.urlopen(url)
+        contents = response.read()
+        text = contents.decode('utf8')
+        data = json.loads(text)
+        </pre>
+        </code>
+
+        <br>
+        <p style="padding-left:80px">
+        <b>Note:</b>   The type of <code style="color:red">data</code> is <code style="color:black"> < type 'dict'></code> containing all of the data currently stored in the Civic Graph database.
+        </p>
+
+    </div>
+    <br>
+    <br>
+
+    <div class="api-data-interaction">
+
+        <div style="padding-left:100px">
+            <h2><b>Interacting with Civic Graph data: </b></h2>
+            <br>
+            Here are the operations you can use to access and interact with the data from Civic Graph.<br>
+        </div>
+
+        <table style="width:90%" align="center">
+          <tr>
+            <th>Operation</th>
+            <th>Input</th>
+            <th>Output</th>
+          </tr>
+
+          <tr>
+            <td>GET all <code style="color:black"> data</code> in Civic Graph</td>
+            <td><code style="color:black"> data</code></td> 
+            <td><code style="color:black"> < type 'dict'></code> of data</td>
+          </tr>
+
+          <tr>
+            <td>GET all <code style="color:black"> nodes</code> in data</td>
+            <td><code style="color:black"> data['collaboration_connections']</code></td> 
+            <td><code style="color:black"> < type 'list'></code> of all collaboration connections</td>
+          </tr>
+          <tr>
+            <td>GET all <code style="color:black"> collaboration_connections</code> data</td>
+            <td><code style="color:black"> data['nodes']</code></td> 
+            <td><code style="color:black"> < type 'list'></code> of all nodes</td>
+          </tr>
+          <tr>
+            <td>GET all <code style="color:black"> data_connections</code> in data</td>
+            <td><code style="color:black"> data['data_connections']</code></td> 
+            <td><code style="color:black"> < type 'list'></code> of all data connections</td>
+          </tr>
+          <tr>
+            <td>GET all <code style="color:black"> funding_connections</code> in data</td>
+            <td><code style="color:black"> data['funding_connections']</code></td> 
+            <td><code style="color:black"> < type 'list'></code> of all funding connections</td>
+          </tr>
+          <tr>
+            <td>GET all <code style="color:black"> investment_connections</code> in data</td>
+            <td><code style="color:black"> data['investment_connections']</code></td> 
+            <td><code style="color:black"> < type 'list'></code> of all investment connections</td>
+          </tr>
+        </table>
+        <br>
+    </div>
+
+    <div class="api-examples">
+        <div style="padding-left:80px">
+            <h2><b>Examples:</b></h2>
+            <br>
+            Here are where we use the API to access certain pieces of data from Civic Graph. And we show you how to format it so that you can use it for you own application.<br>
+        </div>
+        <br>
+        <p style="padding-left:80px">
+        To print the keys in <code style="color:black"> dict</code> of Civic Graph data
+        <code>
+        <pre style="color:black">
+        >> print data.keys()
+
+        >> [u'collaboration_connections',
+            u'nodes',
+            u'data_connections',
+            u'funding_connections',
+            u'investment_connections']
+        </pre>
+        </code>
+        </p>
+
+
+        <p style="padding-left:80px">
+        To GET all <code style="color:black"> nodes</code> in data.
+        <code>
+        <pre style="color:black">
+        >> cc = json.dumps(data['collaboration_connections'], indent=4)
+
+        >> print cc
+        </pre>
+        </code>
+        </p>
+
+
+        <p style="padding-left:80px">
+        To GET all <code style="color:black"> collaboration_connections</code> data.
+        <code>
+        <pre style="color:black">
+        >> nodes = json.dumps(data['nodes'], indent=4)
+        
+        >> print nodes
+        </pre>
+        </code>
+        </p>
+
+
+        <p style="padding-left:80px">
+        To GET all <code style="color:black"> data_connections</code> data.
+        <code>
+        <pre style="color:black">
+        >> dc = json.dumps(data['data_connections'], indent=4)
+        
+        >> print dc
+        </pre>
+        </code>
+        </p>
+
+        <p style="padding-left:80px">
+        To GET all <code style="color:black"> funding_connections </code> data.
+        <code>
+        <pre style="color:black">
+        >> fc = json.dumps(data['funding_connections'], indent=4)
+        
+        >> print fc
+        </pre>
+        </code>
+        </p>
+        <br>
+
+
+        <p style="padding-left:80px">
+        To GET all <code style="color:black"> investment_connections </code> data.
+        <code>
+        <pre style="color:black">
+        >> ic = json.dumps(data['investment_connections'], indent=4)
+        
+        >> print ic
+        </pre>
+        </code>
+        </p>
+        <br>
+    </div>
+
+
+<br>
+<br>
+
+</body>
+<br>
+<footer>
+    <!-- <h4 style="padding-left:40px"> <b>Created by: </b></h4> -->
+    An open-source project by <br>
+    <img src="http://gsec.hitb.org/sg2015/wp-content/uploads/sites/2/2015/06/msft-logo-new.png">
+</footer>
+</html>
