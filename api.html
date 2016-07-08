@@ -15,7 +15,6 @@
 <style type="text/css">
      body {
        /*  color: black;*/
-        background-color: white;
         padding-left: 110px;
         padding-right: 110px;
         padding-top: 40px;
@@ -41,11 +40,18 @@
         border: 1px solid black;
         width:100%;
      }
+
+     table code {
+        background: #F5F5F5;
+     }
 /*     .description {
         padding-left: 110px;
         padding-right: 110px;
 
      }*/
+     code  {
+        background: white;
+     }
 
      img {
         width: 15%;
@@ -116,7 +122,7 @@
 
         <p style="padding-left:80px"><b>Python 2.7.8</b></p>
 
-        <code>
+        <code class="span8-offset2">
         <pre>
         import json
         import urllib
@@ -193,7 +199,7 @@
         <br>
         <p style="padding-left:80px">
         To print the keys in <code style="color:black"> dict</code> of Civic Graph data
-        <code>
+        <code class="span8-offset2">
         <pre style="color:black">
         >> print data.keys()
 
@@ -209,7 +215,7 @@
 
         <p style="padding-left:80px">
         To GET all <code style="color:black"> nodes</code> in data.
-        <code>
+        <code class="span8-offset2">
         <pre style="color:black">
         >> cc = json.dumps(data['collaboration_connections'], indent=4)
 
@@ -221,7 +227,7 @@
 
         <p style="padding-left:80px">
         To GET all <code style="color:black"> collaboration_connections</code> data.
-        <code>
+        <code class="span8-offset2">
         <pre style="color:black">
         >> nodes = json.dumps(data['nodes'], indent=4)
         
@@ -233,7 +239,7 @@
 
         <p style="padding-left:80px">
         To GET all <code style="color:black"> data_connections</code> data.
-        <code>
+        <code class="span8-offset2">
         <pre style="color:black">
         >> dc = json.dumps(data['data_connections'], indent=4)
         
@@ -244,7 +250,7 @@
 
         <p style="padding-left:80px">
         To GET all <code style="color:black"> funding_connections</code> data.
-        <code>
+        <code class="span8-offset2">
         <pre style="color:black">
         >> fc = json.dumps(data['funding_connections'], indent=4)
         
@@ -256,7 +262,7 @@
 
         <p style="padding-left:80px">
         To GET all <code style="color:black"> investment_connections</code> data.
-        <code>
+        <code class="span8-offset2">
         <pre style="color:black">
         >> ic = json.dumps(data['investment_connections'], indent=4)
         
