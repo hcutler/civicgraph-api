@@ -4,6 +4,7 @@ import urllib
 url = "https://civicinsight.azurewebsites.net/athena"
 response = urllib.urlopen(url)
 contents = response.read()
+
 text = contents.decode('utf8')
 all_data = json.loads(text)
 
