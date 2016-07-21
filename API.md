@@ -34,7 +34,6 @@
   OR
 
   * **Code:** 405 METHOD NOT ALLOWED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }` ##CHECK THIS???
     **Content:** `requests.exceptions.HTTPError: 405 Client Error: METHOD NOT ALLOWED for url: http://civicgraph.io/api/categories`
 
 * **Sample Call:**
