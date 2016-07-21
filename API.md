@@ -8,6 +8,7 @@ We see Civic Graph as an educational tool, as a platform to crowdsource up-to-da
 * Help us to improve Civic Graph by contributing to our [source code](https://github.com/MicrosoftTCE/civic-graph)
 
 ----
+
 **Get Categories**
 ----
   Returns json object with all categories in Civic Graph and their associated integer id.
@@ -173,11 +174,14 @@ We see Civic Graph as an educational tool, as a platform to crowdsource up-to-da
       else:
         print response.raise_for_status()
   ```
-  ----
+
+----
 **Additional Resources:**
-  ----
+----
 We've included all of the sample calls listed above in a separate Python script. Access it [here](https://github.com/hcutler/civicgraph-api/blob/master/api-test.py), and feel free to contribute to it!
-  ----
+
+----
+
 An open-source project by
 
 ![alt text](https://assets.onestore.ms/cdnfiles/onestorerolling-1607-15000/shell/v3/images/logo/microsoft.png "Logo Title Text 2")
