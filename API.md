@@ -1,3 +1,13 @@
+# Welcome to the Civic Graph Developer Portal!
+
+__Civic Graph__ is an open source data and visualization project initiated by Microsoft's Technology & Civic Innovation team.
+The purpose of Civic Graph is to provide insights into the burgeoning civic tech community -- who it consists of, what their respective focus areas are, and how they connect to one another. Civic Graph takes a broad definition of civic tech and includes for-profit, non-profit, government agencies, and individuals.
+We see Civic Graph as an educational tool, as a platform to crowdsource up-to-date information regarding the civic tech community, and as a basis to use the data to build out new visualizations, tools, and apps. We invite you to contribute to Civic Graph by:
+* Adding to or editing our current information
+* Use Civic Graph's data in other projects via our API
+* Help us to improve Civic Graph by contributing to our [source code](https://github.com/MicrosoftTCE/civic-graph)
+
+----
 **Get Categories**
 ----
   Returns json object with all categories in Civic Graph and their associated integer id.
