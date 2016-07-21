@@ -30,13 +30,13 @@
 
   * **Code:** 404 NOT FOUND <br />
     **Content:** `{ error : "User doesn't exist" }` ##CHECK THIS???
-    **Content:** 'requests.exceptions.HTTPError: 404 Client Error: NOT FOUND'
+    **Content:** `requests.exceptions.HTTPError: 404 Client Error: NOT FOUND`
 
   OR
 
   * **Code:** 405 METHOD NOT ALLOWED <br />
     **Content:** `{ error : "You are unauthorized to make this request." }` ##CHECK THIS???
-    **Content:** 'requests.exceptions.HTTPError: 405 Client Error: METHOD NOT ALLOWED for url: http://civicgraph.io/api/categories'
+    **Content:** `requests.exceptions.HTTPError: 405 Client Error: METHOD NOT ALLOWED for url: http://civicgraph.io/api/categories`
 
 * **Sample Call:**
 
