@@ -44,7 +44,7 @@
       url = "http://civicgraph.io/api/categories"
       data = '{"query":{"categories":[{}]}'
 
-      response = requests.put(url, data=data)
+      response = requests.get(url, data=data)
       if (response.ok):
         jData = json.loads(response.content)
         for key in jData:
