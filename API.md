@@ -113,7 +113,7 @@
 ----
 **Get Entities**
 ----
-  Returns json object with all entities in Civic Graph and data associated with each (`key_people, twitter_handle, grants_received, influence, locations, expenses, id, relations, followers, data_given, employments, type, description, grants_given, investments_made, nickname, gategories, name, collaborations, employees, data_received, url, revenues, investments_received`)
+  Returns json object with all entities in Civic Graph and data associated with each (`key_people, twitter_handle, grants_received, influence, locations, expenses, id, relations, followers, data_given, employments, type, description, grants_given, investments_made, nickname, categories, name, collaborations, employees, data_received, url, revenues, investments_received`)
 
 * **URL**
 
