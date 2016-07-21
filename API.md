@@ -14,7 +14,7 @@
 
    **Required:**
  
-   `id=[integer]` ##NONE??
+   None
 
 * **Data Params**
 
@@ -68,7 +68,7 @@
 
    **Required:**
  
-   `id=[integer]` #NONE??
+   None
 
 * **Data Params**
 
