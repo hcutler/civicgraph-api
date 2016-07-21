@@ -38,22 +38,22 @@ import urllib2
 ## Error Response: 405 METHOD NOT ALLOWED
 ## Sample Call:
 
-url = "http://civicgraph.io/api/connections"
-data = '{"query":{"connections":{}}'
-response = requests.get(url, data=data)
-print response.content
+# url = "http://civicgraph.io/api/connections"
+# data = '{"query":{"connections":{}}'
+# response = requests.get(url, data=data)
+# print response.content
 
-if (response.ok):
-  jData = json.loads(response.content)
-  # for key in jData:
-  #   print JData[key] #print all connection types
-  #   print jData[key]["Employment"] #print only Employment connections
-  #   print jData[key]["Collaboration"] #print only Collaboration connections
-  #   print jData[key]["Data"] #print only Data connections
-  #   print jData[key]["Funding"] #print only Funding connections
-  #   print jData[key]["Relation"] #print only Relation connections
-else:
-  print response.raise_for_status()
+# if (response.ok):
+#   jData = json.loads(response.content)
+#   # for key in jData:
+#   #   print JData[key] #print all connection types
+#   #   print jData[key]["Employment"] #print only Employment connections
+#   #   print jData[key]["Collaboration"] #print only Collaboration connections
+#   #   print jData[key]["Data"] #print only Data connections
+#   #   print jData[key]["Funding"] #print only Funding connections
+#   #   print jData[key]["Relation"] #print only Relation connections
+# else:
+#   print response.raise_for_status()
 
 # entities
 # URL: /api/entities
@@ -68,16 +68,17 @@ else:
 
 
 # ## Sample Call:
-# url = "http://civicgraph.io/api/connections"
-# data = '{"query":{"nodes":{}}'
-# response = requests.get(url, data=data)
+url = "http://civicgraph.io/api/entities"
+print url
+data = '{"query":{"nodes":{}}'
+response = requests.get(url, data=data)
 
-# if (response.ok):
-#   jData = json.loads(response.content)
-#   for key in jData:
-#     print jData[key]
-# else:
-#   print response.raise_for_status()
+if (response.ok):
+  jData = json.loads(response.content)
+  for key in jData:
+    print jData[key]
+else:
+  print response.raise_for_status()
 
 
 
