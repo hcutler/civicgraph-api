@@ -1,6 +1,7 @@
 import json
 import urllib
 import requests
+import urllib2
 
 # Categories
 # Returns json object with all categories and their associated id.
@@ -18,12 +19,11 @@ import requests
 url = "http://civicgraph.io/api/categories"
 data = '{"query":{"categories":[{"id"}]}'
 
-response = requests.get(url, data=data)
+response = requests.put(url, data=data)
 if (response.ok):
-  print response.content
   jData = json.loads(response.content)
-  # for key in jData:
-  #   print jData[key]
+  for key in jData:
+    print jData[key]
 else:
   print response.raise_for_status()
 
