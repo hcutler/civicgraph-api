@@ -16,19 +16,19 @@ import urllib2
 ###: requests.exceptions.HTTPError: 404 Client Error: NOT FOUND for url: http://civicgraph.io/api/categoriez
 # (2) 405 METHOD NOT ALLOWED
 ## Sample Call:
-url = "http://civicgraph.io/api/categories"
-data = '{"query":{"categories":[{}]}'
+# url = "http://civicgraph.io/api/categories"
+# data = '{"query":{"categories":[{}]}'
 
-response = requests.put(url, data=data)
-if (response.ok):
-  jData = json.loads(response.content)
-  for key in jData:
-    print jData[key]
-else:
-  print response.raise_for_status()
+# response = requests.put(url, data=data)
+# if (response.ok):
+#   jData = json.loads(response.content)
+#   for key in jData:
+#     print jData[key]
+# else:
+#   print response.raise_for_status()
 
 
-# connections
+# Connections
 # URL: /api/connections
 # Method: GET
 # URL Params
@@ -38,16 +38,22 @@ else:
 ## Error Response: 405 METHOD NOT ALLOWED
 ## Sample Call:
 
-# url = "http://civicgraph.io/api/connections"
-# data = '{"query":{"connections":{}}'
-# response = requests.get(url, data=data)
+url = "http://civicgraph.io/api/connections"
+data = '{"query":{"connections":{}}'
+response = requests.get(url, data=data)
+print response.content
 
-# if (response.ok):
-#   jData = json.loads(response.content)
-#   for key in jData:
-#     print jData[key]
-# else:
-#   print response.raise_for_status()
+if (response.ok):
+  jData = json.loads(response.content)
+  # for key in jData:
+  #   print JData[key] #print all connection types
+  #   print jData[key]["Employment"] #print only Employment connections
+  #   print jData[key]["Collaboration"] #print only Collaboration connections
+  #   print jData[key]["Data"] #print only Data connections
+  #   print jData[key]["Funding"] #print only Funding connections
+  #   print jData[key]["Relation"] #print only Relation connections
+else:
+  print response.raise_for_status()
 
 # entities
 # URL: /api/entities
