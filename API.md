@@ -152,7 +152,7 @@
 * **Sample Call:**
 
   ```python
-      url = "http://civicgraph.io/api/connections"
+      url = "http://civicgraph.io/api/entities"
       data = '{"query":{"connections":{}}'
       response = requests.get(url, data=data)
 

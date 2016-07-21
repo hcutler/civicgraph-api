@@ -8,64 +8,67 @@ import urllib2
 # URL: /api/categories
 # Method: GET
 # URL Params
-## Required: 
-## Data Params: url, data
+## Required: None
+## Data Params: None
 ## Success Response: 200
 ## Error Response: 
 # (1) 404 Client Error: NOT FOUND
-###: requests.exceptions.HTTPError: 404 Client Error: NOT FOUND for url: http://civicgraph.io/api/categoriez
+## OR
 # (2) 405 METHOD NOT ALLOWED
-## Sample Call:
-# url = "http://civicgraph.io/api/categories"
-# data = '{"query":{"categories":[{}]}'
+# Sample Call:
+url = "http://civicgraph.io/api/categories"
+data = '{"query":{"categories":[{}]}'
 
-# response = requests.put(url, data=data)
-# if (response.ok):
-#   jData = json.loads(response.content)
-#   for key in jData:
-#     print jData[key]
-# else:
-#   print response.raise_for_status()
+response = requests.put(url, data=data)
+if (response.ok):
+  jData = json.loads(response.content)
+  for key in jData:
+    print jData[key]
+else:
+  print response.raise_for_status()
 
 
 # Connections
 # URL: /api/connections
 # Method: GET
 # URL Params
-## Required: 
-## Data Params:
+## Required: None
+## Data Params: None
 ## Success Response: 200
-## Error Response: 405 METHOD NOT ALLOWED
+## Error Response:
+# (1) 404 Client Error: NOT FOUND
+## OR
+# (2) 405 METHOD NOT ALLOWED
+
 ## Sample Call:
+url = "http://civicgraph.io/api/connections"
+data = '{"query":{"connections":{}}'
+response = requests.get(url, data=data)
+print response.content
 
-# url = "http://civicgraph.io/api/connections"
-# data = '{"query":{"connections":{}}'
-# response = requests.get(url, data=data)
-# print response.content
+if (response.ok):
+  jData = json.loads(response.content)
+  for key in jData:
+    print JData[key] #print all connection types
+  #   print jData[key]["Employment"] #print only Employment connections
+  #   print jData[key]["Collaboration"] #print only Collaboration connections
+  #   print jData[key]["Data"] #print only Data connections
+  #   print jData[key]["Funding"] #print only Funding connections
+  #   print jData[key]["Relation"] #print only Relation connections
+else:
+  print response.raise_for_status()
 
-# if (response.ok):
-#   jData = json.loads(response.content)
-#   # for key in jData:
-#   #   print JData[key] #print all connection types
-#   #   print jData[key]["Employment"] #print only Employment connections
-#   #   print jData[key]["Collaboration"] #print only Collaboration connections
-#   #   print jData[key]["Data"] #print only Data connections
-#   #   print jData[key]["Funding"] #print only Funding connections
-#   #   print jData[key]["Relation"] #print only Relation connections
-# else:
-#   print response.raise_for_status()
-
-# entities
+# Get Entities
 # URL: /api/entities
 # Method: GET
 # URL Params
-## Required: 
-## Data Params:
-## Success Response:
+## Required: None 
+## Data Params: None
+## Success Response: 200
 ## Error Response:
-
-# requests.exceptions.ConnectionError: HTTPConnectionPool(host='civicgraph.io', port=80): Max retries exceeded with url: /api/categories (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x10333bb10>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known',))
-
+# (1) 404 Client Error: NOT FOUND
+## OR
+# (2) 405 METHOD NOT ALLOWED
 
 # ## Sample Call:
 url = "http://civicgraph.io/api/entities"
@@ -79,24 +82,3 @@ if (response.ok):
     print jData[key]
 else:
   print response.raise_for_status()
-
-
-
-
-
-# data = '{"query":{"bool":{"must":[{"text":{"record.document":"SOME_JOURNAL"}},{"text":{"record.articleTitle":"farmers"}}],"must_not":[],"should":[]}},"from":0,"size":50,"sort":[],"facets":{}}'
-# response = requests.get(url, data=data)
-
-
-
-#OLD STUFF
-# url = "https://civicinsight.azurewebsites.net/athena"
-# response = urllib.urlopen(url)
-# contents = response.read() #returns type 'string'
-
-# text = contents.decode('utf8') #returns type 'unicode'
-
-# all_data = json.loads(text) #returns type 'json'
-
-# nodes = json.dumps(all_data['nodes'], indent=4)
-# print nodes
