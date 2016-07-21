@@ -29,7 +29,6 @@
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }` ##CHECK THIS???
     **Content:** `requests.exceptions.HTTPError: 404 Client Error: NOT FOUND`
 
   OR
