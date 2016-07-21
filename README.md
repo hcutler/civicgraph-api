@@ -23,7 +23,7 @@ We see Civic Graph as an educational tool, as a platform to crowdsource up-to-da
   
 *  **URL Params**
 
-   **Required:**
+   <!--**Required:**-->
  
    None
 
@@ -77,7 +77,7 @@ We see Civic Graph as an educational tool, as a platform to crowdsource up-to-da
   
 *  **URL Params**
 
-   **Required:**
+   <!--**Required:**-->
  
    None
 
@@ -136,7 +136,7 @@ We see Civic Graph as an educational tool, as a platform to crowdsource up-to-da
   
 *  **URL Params**
 
-   **Required:**
+   <!--**Required:**-->
  
    None
 
