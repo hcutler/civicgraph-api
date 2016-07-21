@@ -163,3 +163,6 @@
       else:
         print response.raise_for_status()
   ```
+  ----
+An open-source project by
+![alt text](https://assets.onestore.ms/cdnfiles/onestorerolling-1607-15000/shell/v3/images/logo/microsoft.png "Logo Title Text 1")
