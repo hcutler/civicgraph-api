@@ -40,13 +40,15 @@
 
 * **Sample Call:**
 
-  ```javascript
-    $.ajax({
-      url: "/users/1",
-      dataType: "json",
-      type : "GET",
-      success : function(r) {
-        console.log(r);
-      }
-    });
+  ```python
+      url = "http://civicgraph.io/api/categories"
+      data = '{"query":{"categories":[{}]}'
+
+      response = requests.put(url, data=data)
+      if (response.ok):
+        jData = json.loads(response.content)
+        for key in jData:
+          print jData[key]
+      else:
+        print response.raise_for_status()
   ```

@@ -17,7 +17,7 @@ import urllib2
 # (2) 405 METHOD NOT ALLOWED
 ## Sample Call:
 url = "http://civicgraph.io/api/categories"
-data = '{"query":{"categories":[{"id"}]}'
+data = '{"query":{"categories":[{}]}'
 
 response = requests.put(url, data=data)
 if (response.ok):
