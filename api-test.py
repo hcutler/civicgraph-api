@@ -4,20 +4,15 @@ import requests
 import urllib2
 
 # Get Categories
-# Returns json object with all categories and their associated id.
+# Returns json object with all categories and their corresponding integer ID.
 # URL: /api/categories
 # Method: GET
-# URL Params
-## Required: None
-## Data Params: None
 ## Success Response: 200
-## Error Response: 
-# (1) 404 Client Error: NOT FOUND
-## OR
-# (2) 405 METHOD NOT ALLOWED
+## Error Response: 404, 405, or 413
+
 # Sample Call:
 url = "http://civicgraph.io/api/categories"
-data = '{"query":{"categories":[{"id": 1}]}'
+data = '{"query":{"categories":[{}]}'
 
 response = requests.get(url, data=data)
 if (response.ok):
@@ -29,16 +24,11 @@ else:
 
 
 # Get Connections
+# Returns json object with all connections (grouped by connection type) with source and target ids for each connection.
 # URL: /api/connections
 # Method: GET
-# URL Params
-# # Required: None
-# # Data Params: None
 # # Success Response: 200
-# # Error Response:
-# (1) 404 Client Error: NOT FOUND
-# # OR
-# (2) 405 METHOD NOT ALLOWED
+# # Error Response: 404, 405, or 413
 
 ## Sample Call:
 url = "http://civicgraph.io/api/connections"
@@ -58,17 +48,12 @@ if (response.ok):
 else:
   print response.raise_for_status()
 
-# Get Get Entities
+# Get Entities
+# Returns JSON object of all entity data.
 # URL: /api/entities
 # Method: GET
-# URL Params
-## Required: None 
-## Data Params: None
 ## Success Response: 200
-## Error Response:
-# (1) 404 Client Error: NOT FOUND
-## OR
-# (2) 405 METHOD NOT ALLOWED
+## Error Response: 404, 405, or 413
 
 ## Sample Call:
 url = "http://civicgraph.io/api/entities"
